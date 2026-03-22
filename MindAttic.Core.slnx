@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MindAttic.Core.Shared/MindAttic.Core.Shared.csproj" />
+    <Project Path="src/MindAttic.Core.UI.Blazor/MindAttic.Core.UI.Blazor.csproj" />
+    <Project Path="src/MindAttic.Core.UI.Maui/MindAttic.Core.UI.Maui.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,54 @@
+.mindattic-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.mindattic-modal {
+    background: var(--surface-color, #fff);
+    border-radius: var(--border-radius, 6px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    max-width: 90vw;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.mindattic-modal-sm { width: 360px; }
+.mindattic-modal-lg { width: 720px; }
+
+.mindattic-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border-color, #e0e0e0);
+}
+
+.mindattic-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-muted, #6c757d);
+    line-height: 1;
+}
+
+.mindattic-modal-body {
+    padding: 1.25rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.mindattic-modal-footer {
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid var(--border-color, #e0e0e0);
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}

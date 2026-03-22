@@ -1,0 +1,34 @@
+@namespace MindAttic.Core.UI.Blazor.Components
+@typeparam TTab where TTab : struct, Enum
+
+<div class="mindattic-tab-bar">
+    @foreach (var tab in Tabs)
+    {
+        var isActive = EqualityComparer<TTab>.Default.Equals(tab, ActiveTab);
+        <button class="mindattic-tab @(isActive ? "active" : "")"
+                @onclick="() => OnTabSelected.InvokeAsync(tab)">
+            @if (TabTemplate is not null)
+            {
+                @TabTemplate(tab)
+            }
+            else
+            {
+                @tab.ToString()
+            }
+        </button>
+    }
+</div>
+
+@code {
+    [Parameter, EditorRequired]
+    public IReadOnlyList<TTab> Tabs { get; set; } = [];
+
+    [Parameter]
+    public TTab ActiveTab { get; set; }
+
+    [Parameter]
+    public EventCallback<TTab> OnTabSelected { get; set; }
+
+    [Parameter]
+    public RenderFragment<TTab>? TabTemplate { get; set; }
+}
